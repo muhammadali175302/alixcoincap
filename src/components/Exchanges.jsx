@@ -4,12 +4,8 @@ import { Collapse, Row, Col, Typography } from 'antd';
 import { useGetExchangesQuery } from '../services/cryptoApi';
 import Loader from './Loader';
 
-const { Text } = Typography;
-const { Panel } = Collapse;
-
 const Exchanges = () => {
-  const { data, isFetching } = useGetExchangesQuery();
-  const exchangesList = data?.data?.exchanges;
+  const { isFetching } = useGetExchangesQuery();
  // Note: To access this endpoint you need premium plan
   if (isFetching) return <Loader />;
 
